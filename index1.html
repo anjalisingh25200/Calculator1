@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+
+            font-family: Cambria, Cochin;
+            text-align: center;
+        }
+
+        #input1,
+        #input2 {
+            width: 50%;
+            border-radius: 3px;
+            padding: 5px;
+
+        }
+
+        .container-1 {
+
+            position: absolute;
+            width: 40%;
+            height: 90%;
+            left: 30%;
+            text-align: center;
+            color: rgb(97, 44, 44);
+            margin-top: 0rem;
+            display: flexbox;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(142, 236, 236);
+            font-size: large;
+            border-radius: 5px;
+        }
+
+        form {
+            background-color: rgb(224 249 243);
+            margin: -4px 15px 5px;
+            padding: 10%;
+            border-radius: 7px;
+
+        }
+
+        option {
+            position: absolute;
+            width: 40%;
+            height: 90%;
+            left: 30%;
+            text-align: center;
+            color: rgb(250, 249, 249);
+            margin-top: 0rem;
+            display: flexbox;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(16, 97, 97);
+            font-size: large;
+            border-radius: 5px;
+        }
+
+        .btn-rounded {
+            background-color: rgb(202, 252, 21);
+            margin: 7px 14px 7px;
+            padding: 2%;
+            border-radius: 3px;
+        }
+
+        #ebtn {
+            background-color: rgb(202, 252, 21);
+            margin: 7px 14px 7px;
+            padding: 2%;
+            border-radius: 3px;
+
+        }
+
+        #operators,
+        #result {
+            width: 30%;
+            margin: 4px;
+            box-sizing: border-box;
+            background-color: rgb(134, 196, 180);
+            border: none;
+            color: rgb(19, 1, 1);
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            text-shadow: none;
+            display: flexbox;
+            padding: 10px 20px;
+            border-radius: 7px;
+        }
+
+        label {
+            text-align: left;
+            text-decoration: none;
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+            font-size: medium;
+            font-weight: bold;
+            color: black
+        }
+
+        @media screen and (max-width:500px) {
+            .container-1 {
+                height: fit-content;
+            }
+        }
+    </style>
+    <script>
+        function equal() {
+            var n1 = parseInt(document.getElementById('input1').value);
+            var n2 = parseInt(document.getElementById('input2').value);
+            var oper = document.getElementById('operators').value;
+            if (oper === '+') {
+                document.getElementById('result').value = n1 + n2;
+            }
+            if (oper === '-') {
+                document.getElementById('result').value = n1 - n2;
+            }
+            if (oper === '*') {
+                document.getElementById('result').value = n1 * n2;
+
+            }
+            if (oper === '/') {
+                document.getElementById('result').value = n1 / n2;
+            }
+            if (oper === '%') {
+                document.getElementById('result').value = n1 % n2;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container-1">
+        <h1>CALCULATOR</h1>
+        <br>
+        <label for="fn">Enter Number1 : </label>
+        <br>
+        <input type="text" id="input1" placeholder="first number" required>
+        <br>
+        <label for="fn">Enter Number2 : </label>
+        <br>
+        <input type="text" id="input2" placeholder="Second number" required>
+        <br>
+        <select name="" id="operators">
+            <option value="+">ADDITION</option>
+            <option value="-">SUBTRACTION</option>
+            <option value="*">MULTIPLICATION</option>
+            <option value="/">DIVISION</option>
+            <option value="%">MOD</option>
+        </select>
+        <button onclick="equal();" id="ebtn">=</button>
+        <input type="text" id="result" placeholder="Resultshow">
+        <button class="btn-rounded"
+            onclick="document.getElementById('input1').value='',document.getElementById('input2').value='',document.getElementById('result').value=''">CLEAR</button>
+    </div>
+
+</body>
+
+</html>
